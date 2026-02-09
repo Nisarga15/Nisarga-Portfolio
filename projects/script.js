@@ -44,7 +44,7 @@ function showProjects(projects) {
     let projectsContainer = document.querySelector("#projectsContainer");
     let projectsHTML = "";
     
-    projects.forEach(project => {
+    projects.forEach((project, index) => {
         const techStack = project.tech.map(tech => 
             `<span class="tech-badge">${tech}</span>`
         ).join('');
@@ -53,38 +53,49 @@ function showProjects(projects) {
             `<li>${feature}</li>`
         ).join('');
         
-        projectsHTML += `
-        <div class="project-card">
-            <div class="project-image">
-                <img src="/assets/images/projects/${project.image}.png" alt="${project.name}" />
-                <div class="project-zoom">
-                    <i class="fas fa-search"></i>
-                </div>
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">${project.name}</h3>
-                <ul class="project-features">
-                    ${features}
-                </ul>
-                <div class="project-tech">
-                    ${techStack}
-                </div>
-                <div class="project-links">
-                    <a href="${project.links.view}" target="_blank" title="View Project">
-                        <i class="fas fa-external-link-alt"></i> View
-                    </a>
-                    <a href="${project.links.code}" target="_blank" title="View Code">
-                        <i class="fas fa-code"></i> Code
-                    </a>
-                </div>
-            </div>
-        </div>`;
+        const demoButton = project.demo ? `<button class="demo-btn" data-demo-id="${index}" title="Open Interactive Demo"><i class="fas fa-play-circle"></i> Try Demo</button>` : '';
+        
+        projectsHTML += `<div class="project-card"><div class="project-image"><img src="/assets/images/projects/${project.image}.png" alt="${project.name}" /><div class="project-zoom"><i class="fas fa-search"></i></div></div><div class="project-content"><h3 class="project-title">${project.name}</h3><ul class="project-features">${features}</ul><div class="project-tech">${techStack}</div><div class="project-links">${demoButton}<a href="${project.links.view}" target="_blank" title="View Project"><i class="fas fa-external-link-alt"></i> View</a><a href="${project.links.code}" target="_blank" title="View Code"><i class="fas fa-code"></i> Code</a></div></div></div>`;
     });
     
     projectsContainer.innerHTML = projectsHTML;
-        attachProjectPointerEffects();
-        attachProjectHoverTooltip();
-        attachProjectClickZoom();
+    
+    // Add demo modal if it doesn't exist
+    if (!document.querySelector('.demo-modal')) {
+        const modal = document.createElement('div');
+        modal.className = 'demo-modal';
+        modal.innerHTML = `<div class="demo-modal-content"><div class="demo-modal-header"><h2 id="demo-title">Project Demo</h2><button class="demo-close-btn"><i class="fas fa-times"></i></button></div><div class="demo-modal-body"><p id="demo-description"></p><div class="demo-container"><iframe id="demo-iframe" frameborder="0" allowfullscreen></iframe></div></div></div>`;
+        document.body.appendChild(modal);
+        
+        modal.querySelector('.demo-close-btn').addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+        });
+    }
+    
+    // Attach demo button listeners
+    document.querySelectorAll('.demo-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const demoId = btn.getAttribute('data-demo-id');
+            const project = projects[demoId];
+            const modal = document.querySelector('.demo-modal');
+            
+            if (project && project.demo) {
+                document.getElementById('demo-title').textContent = project.name + ' - Interactive Demo';
+                document.getElementById('demo-description').textContent = project.demo.description;
+                document.getElementById('demo-iframe').src = project.demo.url;
+                modal.style.display = 'flex';
+            }
+        });
+    });
+        
+    attachProjectPointerEffects();
+    attachProjectHoverTooltip();
+    attachProjectClickZoom();
 }
 
     function attachProjectPointerEffects() {
@@ -173,17 +184,6 @@ getProjects().then(data => {
 })
 // fetch projects end
 
-// Start of Tawk.to Live Chat
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/693e38220e66a3197e183ee0/1jcdgmhtc';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
-// End of Tawk.to Live Chat
 
 // disable developer mode
 document.onkeydown = function (e) {

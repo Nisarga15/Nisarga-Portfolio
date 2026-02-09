@@ -1,5 +1,26 @@
 [
   {
+    "name": "SOC Dashboard - AI Analytics",
+    "desc": "Comprehensive Security Operations Center dashboard with real-time threat detection, AI-powered security analysis, and SIEM integrations for enterprise security monitoring.",
+    "image": "soc-dashboard",
+    "category": "software",
+    "features": [
+      "Real-time threat detection & monitoring with live alerts",
+      "AI-powered security alert analysis and threat correlation",
+      "SIEM integrations (Splunk, ELK, Wazuh)"
+    ],
+    "tech": ["React", "Node.js", "Python", "Machine Learning", "SIEM", "Cybersecurity", "Vercel", "AWS"],
+    "links": {
+      "view": "https://soc-dashboard-ai-analytics.vercel.app",
+      "code": "https://github.com/Poorna-Chandra-D/SOC-dashboard-AI-Analytics"
+    },
+    "demo": {
+      "type": "iframe",
+      "url": "https://soc-dashboard-ai-analytics.vercel.app/demo",
+      "description": "Enterprise SOC dashboard with real-time threat detection, AI-powered analysis, and SIEM integrations for comprehensive security monitoring."
+    }
+  },
+  {
     "name": "Legacy Application Modernization",
     "desc": "Developed AI-powered platform using Langchain to automate PHP-to-NodeJS conversions with secure file uploads.",
     "image": "legacy-modernization",
@@ -13,6 +34,11 @@
     "links": {
       "view": "https://vigilant-disco-client.vercel.app/",
       "code": "https://github.com/orgs/Legacy-Application-Modernization/repositories"
+    },
+    "demo": {
+      "type": "iframe",
+      "url": "https://vigilant-disco-client.vercel.app/",
+      "description": "Interactive AI-powered code conversion platform. Try converting PHP code to NodeJS!"
     }
   },
   {
