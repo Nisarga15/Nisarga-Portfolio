@@ -1,0 +1,213 @@
+/* Animated Code Editor Preview Styles */
+.code-editor-preview {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+.code-editor-preview .heading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.code-editor-preview .heading span {
+  color: #ff7a18;
+}
+
+.editor-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 122, 24, 0.1);
+  overflow: hidden;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  border: 1px solid #333;
+}
+
+/* Small Code Editor for Home Page */
+.code-editor-preview-home {
+  width: 100%;
+  max-width: 550px;
+  order: 2;
+}
+
+.editor-container-small {
+  background: rgba(12, 18, 28, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 
+              0 0 40px rgba(0, 212, 255, 0.15);
+  overflow: hidden;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  border: 1.5px solid rgba(0, 212, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 420px;
+  max-height: 480px;
+  transition: all 0.3s ease;
+}
+
+.editor-container-small:hover {
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.95), 
+              0 0 50px rgba(0, 212, 255, 0.25);
+  border-color: rgba(0, 212, 255, 0.35);
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, rgba(18, 25, 38, 0.9) 0%, rgba(25, 32, 48, 0.9) 100%);
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+}}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+.button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.button.close {
+  background: #ff5f57;
+}
+
+.button.minimize {
+  background: #ffbd2e;
+}
+
+.button.maximize {
+  background: #28ca42;
+}
+
+.editor-title {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  color: #d4d4d4;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.editor-body {
+  padding: 24px 20px;
+  overflow-x: auto;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #0f1419 0%, #1a202e 100%);
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.editor-body pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #e8e8e8;
+  width: 100%;
+}
+
+.editor-body code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #e8e8e8;
+  display: block;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* Syntax highlighting colors - VS Code Inspired */
+.token.comment {
+  color: #6a9955;
+  font-style: italic;
+}
+
+.token.string {
+  color: #ce9178;
+}
+
+.token.function {
+  color: #dcdcaa;
+  font-weight: 600;
+}
+
+.token.keyword {
+  color: #569cd6;
+  font-weight: 600;
+}
+
+.token.number {
+  color: #b5cea8;
+}
+
+.token.operator {
+  color: #d4d4d4;
+}
+
+.token.property {
+  color: #9cdcfe;
+}
+
+/* Scrollbar styling */
+.editor-body::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.editor-body::-webkit-scrollbar-track {
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.editor-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 4px;
+}
+
+.editor-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .code-editor-preview {
+    padding: 60px 10px;
+  }
+
+  .editor-container {
+    width: 95%;
+  }
+
+  .editor-container-small {
+    max-width: 100%;
+  }
+
+  .editor-body {
+    padding: 12px;
+    min-height: 200px;
+  }
+
+  .editor-body code {
+    font-size: 12px;
+  }
+
+  .editor-title {
+    font-size: 11px;
+  }
+}
