@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["Software Engineer", "Data Engineer", "Network Engineer", "Application Developer", "Network Software Engineer", "Site Reliability Engineer"],
+    strings: ["Network Engineer", "Software Engineer", "Data Engineer", "Application Developer", "Network Software Engineer", "Site Reliability Engineer"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -437,18 +437,6 @@ document.onkeydown = function (e) {
     }
 }
 
-// Start of Tawk.to Live Chat
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/693e38220e66a3197e183ee0/1jcdgmhtc';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
-// End of Tawk.to Live Chat
-
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
 const srtop = ScrollReveal({
@@ -502,3 +490,17 @@ srtop.reveal('.recommendations .recommendation-box', { interval: 200 });
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
+
+// Holographic Profile Mouse Tracking Effect
+const profileContainer = document.querySelector('.profile-container');
+
+document.addEventListener('mousemove', (e) => {
+  const { clientX: mouseX, clientY: mouseY } = e;
+  const { innerWidth: width, innerHeight: height } = window;
+
+  const xRotation = ((mouseY / height) - 0.5) * 30; // Rotate up to 30 degrees vertically
+  const yRotation = ((mouseX / width) - 0.5) * -30; // Rotate up to 30 degrees horizontally
+
+  profileContainer.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+});
+
