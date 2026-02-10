@@ -42,6 +42,27 @@
     }
   },
   {
+    "name": "Smart Job Application Tracker",
+    "desc": "Full-stack application automating job application tracking via email integration, NLP parsing, and real-time analytics. Features OAuth 2.0 Gmail/Outlook integration, Kanban board, interview management, and advanced conversion funnel analytics.",
+    "image": "job-tracker",
+    "category": "software",
+    "features": [
+      "Gmail/Outlook OAuth 2.0 integration with NLP-powered email parsing",
+      "Kanban-style board for application lifecycle management (Applied → Interview → Offer)",
+      "Advanced analytics dashboard with conversion funnel & trend analysis"
+    ],
+    "tech": ["React", "Node.js", "Material-UI", "JWT", "OAuth 2.0", "NLP", "MongoDB", "Vercel", "Express"],
+    "links": {
+      "view": "https://smart-job-application-tracker.vercel.app/",
+      "code": "https://github.com/Poorna-Chandra-D/Smart-Job-Application-Tracker"
+    },
+    "demo": {
+      "type": "iframe",
+      "url": "https://smart-job-application-tracker.vercel.app/",
+      "description": "Full-stack job application tracker with email integration, NLP parsing, and real-time analytics dashboard for managing your job search pipeline."
+    }
+  },
+  {
     "name": "Real-Time Network Monitoring & Alerting Platform",
     "desc": "End-to-end network monitoring solution with real-time data collection, alerting, and interactive analytics dashboard.",
     "image": "monitoring",
