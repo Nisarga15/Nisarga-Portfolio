@@ -20,8 +20,28 @@
         "icon": "https://img.icons8.com/color/48/000000/azure.png"
     },
     {
-        "name": "Data Engineering",
+        "name": "AI Tools Engineering",
         "icon": "https://img.icons8.com/color/48/000000/data-configuration.png"
+    },
+    {
+        "name": "LLM Integration & Prompt Engineering",
+        "icon": "https://img.icons8.com/color/48/000000/artificial-intelligence.png"
+    },
+    {
+        "name": "RAG Systems & Vector Databases",
+        "icon": "https://img.icons8.com/color/48/000000/database.png"
+    },
+    {
+        "name": "Agentic AI & Multi-Agent Systems",
+        "icon": "https://img.icons8.com/color/48/000000/network.png"
+    },
+    {
+        "name": "Data Pipeline Orchestration",
+        "icon": "https://img.icons8.com/color/48/000000/workflow.png"
+    },
+    {
+        "name": "Model Evaluation & Fine-tuning",
+        "icon": "https://img.icons8.com/color/48/000000/machine-learning.png"
     },
     {
         "name": "CI/CD Pipelines",

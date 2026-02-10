@@ -328,7 +328,7 @@ ${skillList}
 • Network Engineering (CCNA certified)
 • Software Development (Python, JavaScript, React)
 • Cloud & DevOps (Azure, Docker, Kubernetes)
-• Data Engineering (PySpark, Azure Databricks)
+• AI Tools Engineering (PySpark, Azure Databricks)
 
 Would you like to know about specific projects using these skills?`;
   }
@@ -365,7 +365,7 @@ Network & Telecommunications Assistant at Clark University ITS
 **Key Skills Applied:**
 • Enterprise network infrastructure design and implementation
 • VoIP, VLAN, WiFi optimization, and network troubleshooting
-• Software development and data engineering
+• Software development and AI tools engineering
 • System administration and technical support
 
 Seeking full-time opportunities for May 2026 and beyond - looking to leverage both technical expertise and leadership experience!`;
@@ -396,7 +396,7 @@ Vidyavardhaka College of Engineering, Karnataka, India (2018-2022)
 • Data Structures
 
 **Career Focus:**
-Combining academic knowledge with hands-on experience in network engineering, data engineering (Azure Databricks, PySpark), and full-stack software development!`;
+Combining academic knowledge with hands-on experience in network engineering, AI tools engineering (Azure Databricks, PySpark), and full-stack software development!`;
   }
 
   getCertificationsResponse() {
@@ -461,7 +461,7 @@ ${softwareSkills.join(' • ')}
 📄 **Resume:** Available for download in the About section
 
 **Availability:**
-Seeking full-time opportunities in Network Engineering, Software Engineering, and Data Engineering roles starting 2026. Open to relocation and remote positions!
+Seeking full-time opportunities in Network Engineering, Software Engineering, and AI Tools Engineering roles starting 2026. Open to relocation and remote positions!
 
 Feel free to reach out for collaborations, job opportunities, or networking
 

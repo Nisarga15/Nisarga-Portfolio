@@ -147,32 +147,17 @@ async function fetchTotalStarsAndForks() {
   }
 }
 
-async function renderContributionGraph() {
+function renderContributionGraph() {
   const graphContainer = document.getElementById('contribution-graph');
   if (!graphContainer) return;
-
-  try {
-    // Use GitHub's official contribution chart
-    const chartUrl = `https://ghchart.rshah.org/39d353/${GITHUB_USERNAME}`;
-    
-    graphContainer.innerHTML = `
-      <div style="width: 100%; text-align: center; padding: 1rem 0; overflow-x: auto;">
-        <img 
-          src="${chartUrl}" 
-          alt="GitHub contributions chart for ${GITHUB_USERNAME}"
-          style="display: inline-block; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); cursor: help; transform: scale(1.2); transform-origin: center top; min-width: fit-content;"
-          title="Click on any date in your GitHub profile to see contribution details"
-        />
-        <p style="color: #8b949e; font-size: 12px; margin-top: 1rem; margin-bottom: 0;">
-          💡 Tip: Click any contribution square in your <a href="https://github.com/${GITHUB_USERNAME}?tab=contributions" target="_blank" style="color: #0d9488; text-decoration: none;">GitHub profile</a> to see details
-        </p>
-      </div>
-    `;
-
-  } catch (error) {
-    console.error('Error rendering contribution graph:', error);
-    graphContainer.innerHTML = '<p style="text-align: center; color: #8b949e; padding: 2rem;">Unable to load contribution graph</p>';
-  }
+  const chartUrl = `https://ghchart.rshah.org/39d353/${GITHUB_USERNAME}`;
+  graphContainer.innerHTML = `
+    <img
+      src="${chartUrl}"
+      alt="GitHub contributions chart for ${GITHUB_USERNAME}"
+      loading="lazy"
+    />
+  `;
 }
 
 async function fetchRecentCommits() {
@@ -371,12 +356,12 @@ async function fetchTopRepositories() {
   }
 }
 
-async function initGitHubActivity() {
+function initGitHubActivity() {
   const githubSection = document.getElementById('github-activity');
   if (!githubSection) return;
 
   fetchUserStats();
-  await renderContributionGraph();
+  renderContributionGraph();
   fetchRecentCommits();
   fetchLanguageStats();
   fetchTopRepositories();
