@@ -32,6 +32,13 @@
             document.body.appendChild(modal);
             sessionStorage.setItem(GUESTBOOK_SHOWN_KEY, 'true');
 
+            // Auto-close modal after 5 seconds
+            setTimeout(() => {
+                if (document.getElementById('guestbook-modal')) {
+                    closeModal();
+                }
+            }, 5000);
+
             // Handle form submission
             const form = document.getElementById('guestbook-form');
             form.addEventListener('submit', (e) => {
