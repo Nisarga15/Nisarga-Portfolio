@@ -7,12 +7,12 @@ class PortfolioChatbot {
       skills: [],
       projects: [],
       experience: {
-        current: "Network & Telecommunications Assistant at Clark University ITS",
-        education: "Master's in Computer Science at Clark University",
-        location: "Worcester, MA (Boston area)",
+        current: "Data Analyst Intern at Metropolitan Transportation Authority (MTA)",
+        education: "MS in Computer Science (STEM) at Pace University, 4.0 GPA",
+        location: "New York, NY",
         duration: "Aug 2024 - May 2026",
-        certifications: ["CCNA (Cisco Certified Network Associate)", "Cisco Routing & Switching"],
-        email: "poornacd24@gmail.com"
+        certifications: ["Azure Fundamentals (AZ-900)", "Azure Developer Associate (AZ-204)"],
+        email: "nisargavgowda15@gmail.com"
       }
     };
     this.init();
@@ -89,7 +89,7 @@ class PortfolioChatbot {
               type="text" 
               id="chat-input" 
               class="chat-input" 
-              placeholder="Ask me anything about Poorna..."
+              placeholder="Ask me anything about Nisarga..."
               autocomplete="off"
             />
             <button id="chat-send" class="chat-send-btn" aria-label="Send message">
@@ -130,7 +130,7 @@ class PortfolioChatbot {
     this.isOpen = !this.isOpen;
     const chatWindow = document.getElementById('chat-window');
     const toggleBtn = document.getElementById('chat-toggle');
-    
+
     if (this.isOpen) {
       chatWindow.classList.add('open');
       toggleBtn.classList.add('active');
@@ -148,7 +148,7 @@ class PortfolioChatbot {
   }
 
   addWelcomeMessage() {
-    const welcomeMsg = `Hi! 👋 I'm Poorna's AI assistant. I can answer questions about:
+    const welcomeMsg = `Hi! 👋 I'm Nisarga's AI assistant. I can answer questions about:
 
 • Skills & Technologies
 • Projects & Experience
@@ -157,7 +157,7 @@ class PortfolioChatbot {
 
 What would you like to know?`;
     this.addMessage(welcomeMsg, 'bot');
-    
+
     // Add schedule prompt after a delay
     setTimeout(() => {
       this.addMessage("💡 Tip: Click '📅 Schedule Meeting' to book time with me!", 'bot');
@@ -167,7 +167,7 @@ What would you like to know?`;
   sendMessage() {
     const input = document.getElementById('chat-input');
     const message = input.value.trim();
-    
+
     if (!message) return;
 
     // Add user message
@@ -192,43 +192,43 @@ What would you like to know?`;
     const messagesContainer = document.getElementById('chat-messages');
     const messageDiv = document.createElement('div');
     messageDiv.className = `chat-message ${type}-message`;
-    
+
     const avatar = document.createElement('div');
     avatar.className = 'message-avatar';
     avatar.innerHTML = type === 'bot' ? '<i class="fas fa-robot"></i>' : '<i class="fas fa-user"></i>';
-    
+
     const content = document.createElement('div');
     content.className = 'message-content';
     content.innerHTML = text.replace(/\n/g, '<br>');
-    
+
     // Add schedule button for schedule response
     if (type === 'bot' && text.includes('Schedule a Meeting')) {
       const buttonContainer = document.createElement('div');
       buttonContainer.className = 'schedule-buttons';
-      
+
       // Google Calendar button
       const calendarBtn = document.createElement('a');
-      calendarBtn.href = 'https://calendly.com/poornacd24/30min';
+      calendarBtn.href = 'https://calendly.com/nisargavgowda15/30min';
       calendarBtn.className = 'schedule-meeting-btn primary';
       calendarBtn.innerHTML = '<i class="fas fa-calendar-check"></i> Book on Google Calendar';
       calendarBtn.target = '_blank';
-      
+
       // Email button
       const emailBtn = document.createElement('a');
-      emailBtn.href = 'mailto:poornacd24@gmail.com?subject=Meeting Request with Poorna&body=Hi Poorna,%0D%0A%0D%0AI would like to schedule a meeting with you.%0D%0A%0D%0APreferred Date/Time:%0D%0AMeeting Topic:%0D%0APreferred Platform (Google Meet/Zoom/Teams):%0D%0ADuration:%0D%0A%0D%0AThank you!';
+      emailBtn.href = 'mailto:nisargavgowda15@gmail.com?subject=Meeting Request with Nisarga&body=Hi Nisarga,%0D%0A%0D%0AI would like to schedule a meeting with you.%0D%0A%0D%0APreferred Date/Time:%0D%0AMeeting Topic:%0D%0APreferred Platform (Google Meet/Zoom/Teams):%0D%0ADuration:%0D%0A%0D%0AThank you!';
       emailBtn.className = 'schedule-meeting-btn secondary';
       emailBtn.innerHTML = '<i class="fas fa-envelope"></i> Email Instead';
       emailBtn.target = '_blank';
-      
+
       buttonContainer.appendChild(calendarBtn);
       buttonContainer.appendChild(emailBtn);
       content.appendChild(buttonContainer);
     }
-    
+
     messageDiv.appendChild(avatar);
     messageDiv.appendChild(content);
     messagesContainer.appendChild(messageDiv);
-    
+
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 
@@ -278,7 +278,7 @@ What would you like to know?`;
     }
 
     // Certifications
-    if (this.matchesPattern(lowerMsg, ['certification', 'certified', 'ccna', 'cisco'])) {
+    if (this.matchesPattern(lowerMsg, ['certification', 'certified', 'azure', 'microsoft'])) {
       return this.getCertificationsResponse();
     }
 
@@ -304,7 +304,7 @@ What would you like to know?`;
 
     // Location
     if (this.matchesPattern(lowerMsg, ['location', 'where', 'live', 'based'])) {
-      return "Poorna is currently based in Worcester, MA (Boston area) while pursuing a Master's degree at Clark University. Open to remote opportunities and relocation for full-time positions starting 2026!";
+      return "Nisarga is currently based in New York, NY while pursuing a Master's degree at Pace University. Open to remote opportunities and relocation for full-time positions starting 2026!";
     }
 
     // Default response
@@ -318,14 +318,14 @@ What would you like to know?`;
   getSkillsResponse(message) {
     const topSkills = this.portfolioData.skills.slice(0, 10).map(s => s.name);
     const skillList = topSkills.join(', ');
-    
-    return `Poorna has expertise in both Network and Software Engineering! 🚀
+
+    return `Nisarga has expertise in both Network and Software Engineering! 🚀
 
 **Top Skills:**
 ${skillList}
 
 **Specializations:**
-• Network Engineering (CCNA certified)
+• Software Development (Azure certified)
 • Software Development (Python, JavaScript, React)
 • Cloud & DevOps (Azure, Docker, Kubernetes)
 • AI Tools Engineering (PySpark, Azure Databricks)
@@ -335,10 +335,10 @@ Would you like to know about specific projects using these skills?`;
 
   getProjectsResponse(message) {
     if (this.portfolioData.projects.length === 0) {
-      return "Check out the Projects section for detailed information about Poorna's work!";
+      return "Check out the Projects section for detailed information about Nisarga's work!";
     }
 
-    const projectList = this.portfolioData.projects.slice(0, 3).map(p => 
+    const projectList = this.portfolioData.projects.slice(0, 3).map(p =>
       `• **${p.name}**: ${p.desc}`
     ).join('\n\n');
 
@@ -347,34 +347,30 @@ Would you like to know about specific projects using these skills?`;
 
   getExperienceResponse() {
     return `**Current Position:**
-Network & Telecommunications Assistant at Clark University ITS
-📍 Worcester, MA (Boston area)
-🕒 Sep 2025 – Present (Part-time)
-🎯 Promoted from Network Engineering Intern
+Data Analyst Intern (Systems & Backend Focus) at MTA
+📍 New York, NY
+🕒 July 2025 – Present
 
-**Career Progression at Clark University:**
-→ Network Assistant (Apr 2025 - May 2025)
-→ Network Engineering Intern (May 2025 - Sep 2025)  
-→ Network & Telecommunications Assistant (Sep 2025 - Present) ✨
-
-**Previous Experience:**
-• **Software Engineer** at TEKsystems Global Services (Apr 2024 – Aug 2024, Full-time)
-• **Senior Software Engineer** at TEKsystems Global Services (Promoted)
-• **Associate Software Engineer** at TEKsystems Global Services
+**Career Timeline:**
+• **Data Analyst Intern** at Metropolitan Transportation Authority (MTA) — July 2025 – Present
+• **Software Developer (Client: AT&T)** at IBM — April 2023 – August 2024
+• **Software Developer (Client: McLaren, Isuzu)** at Chipsync Technologies — May 2022 – March 2023
+• **Software Development Intern** at SandLogic — July 2021 – Feb 2022
+• **Web Development Intern** at United Dimensions — July 2021 – Sep 2021
 
 **Key Skills Applied:**
-• Enterprise network infrastructure design and implementation
-• VoIP, VLAN, WiFi optimization, and network troubleshooting
-• Software development and AI tools engineering
-• System administration and technical support
+• Python-based backend ingestion and data processing
+• Enterprise cloud migration and CI/CD pipeline engineering
+• Real-time reporting and operational monitoring
+• Backend services using Python, Java, Node.js, .NET Core
 
-Seeking full-time opportunities for May 2026 and beyond - looking to leverage both technical expertise and leadership experience!`;
+Seeking full-time opportunities for May 2026 and beyond!`;
   }
 
   getEducationResponse() {
     return `**Current Education:**
 🎓 Master's degree in Computer Science
-🏛️ Clark University, Worcester, MA
+🏛️ Pace University, New York, NY
 📅 Aug 2024 - May 2026 (Expected Graduation)
 
 **Master's Coursework:**
@@ -396,32 +392,30 @@ Vidyavardhaka College of Engineering, Karnataka, India (2018-2022)
 • Data Structures
 
 **Career Focus:**
-Combining academic knowledge with hands-on experience in network engineering, AI tools engineering (Azure Databricks, PySpark), and full-stack software development!`;
+Combining academic knowledge with hands-on experience in software development, data analytics, and cloud engineering!`;
   }
 
   getCertificationsResponse() {
     return `**Certifications:**
-🏆 CCNA (Cisco Certified Network Associate)
+🏆 Microsoft Certified: Azure Fundamentals (AZ-900)
+🏆 Microsoft Certified: Azure Developer Associate (AZ-204)
+📜 Internshala Python Certification
+
+**Publication:**
+📄 "Detection Of Alzheimer's Disease from MRI Scan using Machine Learning" — IJRASET (Paper Id: IJRASET45831)
 
 **Expertise Demonstrated:**
-• Enterprise network design and architecture
-• Routing protocols (OSPF, EIGRP, BGP)
-• Switching technologies and VLANs
-• Network security and access control
-• WAN technologies and services
+• Cloud platforms (Azure, AWS, GCP)
+• Backend development (Python, Java, .NET Core)
+• CI/CD pipelines and DevOps practices
+• Data analytics and SQL databases
 
-**Additional Skills:**
-• Cloud platforms (Azure, AWS)
-• DevOps tools & practices (Docker, Kubernetes)
-• Data engineering (PySpark, Azure Databricks)
-• Network troubleshooting and optimization
-
-These certifications validate expertise in designing, implementing, and managing enterprise network infrastructure!`;
+These certifications validate expertise in cloud computing and software development!`;
   }
 
   getNetworkSkillsResponse() {
     const networkSkills = this.portfolioData.skills
-      .filter(s => ['cisco', 'network', 'voip', 'vlan', 'wifi', 'routing', 'ccna', 'security']
+      .filter(s => ['python', 'java', 'cloud', 'aws', 'azure', 'docker', 'ci/cd', 'backend']
         .some(kw => s.name.toLowerCase().includes(kw)))
       .map(s => s.name)
       .slice(0, 8);
@@ -429,7 +423,7 @@ These certifications validate expertise in designing, implementing, and managing
     return `**Network Engineering Expertise:**
 ${networkSkills.join(' • ')}
 
-Poorna has hands-on experience with:
+Nisarga has hands-on experience with:
 • Cisco routing & switching infrastructure
 • VoIP implementation and troubleshooting
 • VLAN configuration and network segmentation
@@ -454,24 +448,24 @@ ${softwareSkills.join(' • ')}
 • Backend systems (Python, APIs)
 • Cloud infrastructure (Azure, Docker, Kubernetes)
 • Data engineering (PySpark, Azure Databricks)
-📧 **Email:** poornacd24@gmail.com
-📍 **Location:** Worcester, MA (Boston area)
+📧 **Email:** nisargavgowda15@gmail.com
+📍 **Location:** New York, NY
 💼 **LinkedIn:** Visit the footer links
 💻 **GitHub:** Explore the repositories
 📄 **Resume:** Available for download in the About section
 
 **Availability:**
-Seeking full-time opportunities in Network Engineering, Software Engineering, and AI Tools Engineering roles starting 2026. Open to relocation and remote positions!
+Seeking full-time opportunities in Software Development, Data Analytics, and Backend Engineering roles starting 2026. Open to relocation and remote positions!
 
 Feel free to reach out for collaborations, job opportunities, or networking
 
-You can reach Poorna through:
+You can reach Nisarga through:
 • 📧 Email: Check the Contact section
 • 💼 LinkedIn: Visit the footer links
 • 💻 GitHub: Explore the repositories
 • 📄 Resume: Available for download
 
-Poorna is actively seeking opportunities in Software and Network Engineering roles. Feel free to reach out for collaborations or job opportunities!`;
+Nisarga is actively seeking opportunities in Software Development and Data Analytics roles. Feel free to reach out for collaborations or job opportunities!`;
   }
 
   getDefaultResponse() {
@@ -489,18 +483,18 @@ Try asking something specific, or click one of the suggestion buttons below!`;
   getScheduleResponse() {
     return `
       <div style="line-height: 1.6;">
-        <strong>Schedule a Meeting with Poorna:</strong><br><br>
+        <strong>Schedule a Meeting with Nisarga:</strong><br><br>
         📅 <a href="https://calendly.com/your-username/event-name" target="_blank">Book a time on Calendly</a>
       </div>
     `;
   }
 
   getContactResponse() {
-    return `You can reach Poorna through the following channels:
+    return `You can reach Nisarga through the following channels:
 
-📧 <strong>Email:</strong> <a href="mailto:poornacd24@gmail.com">poornacd24@gmail.com</a><br>
-💼 <strong>LinkedIn:</strong> <a href="www.linkedin.com/in/poorna-chandra-dinesh" target="_blank">Visit LinkedIn Profile</a><br>
-💻 <strong>GitHub:</strong> <a href="https://github.com/Poorna-Chandra-D" target="_blank">Explore GitHub Repositories</a><br>
+📧 <strong>Email:</strong> <a href="mailto:nisargavgowda15@gmail.com">nisargavgowda15@gmail.com</a><br>
+💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nisarga-vishwamanjuswamy/" target="_blank">Visit LinkedIn Profile</a><br>
+💻 <strong>GitHub:</strong> <a href="https://github.com/Nisarga15" target="_blank">Explore GitHub Repositories</a><br>
 📄 <strong>Resume:</strong> Available for download in the About section<br><br>
 Feel free to reach out for collaborations, job opportunities, or networking!`;
   }

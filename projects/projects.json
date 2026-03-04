@@ -1,145 +1,82 @@
 [
   {
-    "name": "SOC Dashboard - AI Analytics",
-    "desc": "Comprehensive Security Operations Center dashboard with real-time threat detection, AI-powered security analysis, and SIEM integrations for enterprise security monitoring.",
+    "name": "LLM API Gateway – Cloud Infrastructure & Automation Platform",
+    "desc": "Python-based, API-first LLM gateway to standardize request routing, validation, retries, and responses with cloud-ready principles.",
     "image": "soc-dashboard",
     "category": "software",
     "features": [
-      "Real-time threat detection & monitoring with live alerts",
-      "AI-powered security alert analysis and threat correlation",
-      "SIEM integrations (Splunk, ELK, Wazuh)"
+      "API-first LLM gateway for standardized request routing and validation",
+      "Cloud-ready design with scalability, fault tolerance, and structured logging",
+      "CI/CD pipelines for repeatable deployments and automated configuration updates"
     ],
-    "tech": ["React", "Node.js", "Python", "Machine Learning", "SIEM", "Cybersecurity", "Vercel", "AWS"],
+    "tech": ["Python", "API Gateway", "CI/CD", "Cloud", "Docker", "LLM"],
     "links": {
-      "view": "https://soc-dashboard-ai-analytics.vercel.app",
-      "code": "https://github.com/Poorna-Chandra-D/SOC-dashboard-AI-Analytics"
-    },
-    "demo": {
-      "type": "iframe",
-      "url": "https://soc-dashboard-ai-analytics.vercel.app/demo",
-      "description": "Enterprise SOC dashboard with real-time threat detection, AI-powered analysis, and SIEM integrations for comprehensive security monitoring."
+      "view": "#",
+      "code": "https://github.com/Nisarga15"
     }
   },
   {
-    "name": "Legacy Application Modernization",
-    "desc": "Developed AI-powered platform using Langchain to automate PHP-to-NodeJS conversions with secure file uploads.",
+    "name": "Immunization Reimagined: Biological to Digital Ecosystem",
+    "desc": "Systems-based literature review examining how digital platforms, data pipelines, and AI/ML models transform immunization programs into adaptive, intelligent systems.",
     "image": "legacy-modernization",
     "category": "software",
     "features": [
-      "AI-powered code conversion from PHP to NodeJS using Langchain",
-      "Secure file upload and processing with validation",
-      "Real-time transformation with error handling"
+      "Conceptual architectures integrating electronic registries and predictive analytics",
+      "AI/ML models including logistic regression, Random Forest, and SHAP for risk prediction",
+      "Governance, scalability, and ethics-by-design considerations for large-scale digital systems"
     ],
-    "tech": ["Node.js", "Langchain", "React", "Vercel"],
+    "tech": ["AI/ML", "Data Pipelines", "Python", "Research", "Analytics"],
     "links": {
-      "view": "https://vigilant-disco-client.vercel.app/",
-      "code": "https://github.com/orgs/Legacy-Application-Modernization/repositories"
-    },
-    "demo": {
-      "type": "iframe",
-      "url": "https://vigilant-disco-client.vercel.app/",
-      "description": "Interactive AI-powered code conversion platform. Try converting PHP code to NodeJS!"
+      "view": "#",
+      "code": "https://github.com/Nisarga15"
     }
   },
   {
-    "name": "Smart Job Application Tracker",
-    "desc": "Full-stack application automating job application tracking via email integration, NLP parsing, and real-time analytics. Features OAuth 2.0 Gmail/Outlook integration, Kanban board, interview management, and advanced conversion funnel analytics.",
+    "name": "InternPath AI – AI Powered Internship Application Copilot",
+    "desc": "AI agents using IBM Watsonx Orchestrate and Granite LLM to analyze job descriptions, match skills, and generate ATS-optimized resumes and cover letters.",
     "image": "job-tracker",
     "category": "software",
     "features": [
-      "Gmail/Outlook OAuth 2.0 integration with NLP-powered email parsing",
-      "Kanban-style board for application lifecycle management (Applied → Interview → Offer)",
-      "Advanced analytics dashboard with conversion funnel & trend analysis"
+      "IBM Watsonx Orchestrate and Granite LLM for job description analysis and skill matching",
+      "Automated STAR-based bullet rewriting with ATS scoring and CPT/OPT-compliant language",
+      "Reduced manual application effort and improved application quality"
     ],
-    "tech": ["React", "Node.js", "Material-UI", "JWT", "OAuth 2.0", "NLP", "MongoDB", "Vercel", "Express"],
+    "tech": ["IBM Watsonx", "Granite LLM", "AI Agents", "Python", "NLP"],
     "links": {
-      "view": "https://smart-job-application-tracker.vercel.app/",
-      "code": "https://github.com/Poorna-Chandra-D/Smart-Job-Application-Tracker"
-    },
-    "demo": {
-      "type": "iframe",
-      "url": "https://smart-job-application-tracker.vercel.app/",
-      "description": "Full-stack job application tracker with email integration, NLP parsing, and real-time analytics dashboard for managing your job search pipeline."
+      "view": "#",
+      "code": "https://github.com/Nisarga15"
     }
   },
   {
-    "name": "Real-Time Network Monitoring & Alerting Platform",
-    "desc": "End-to-end network monitoring solution with real-time data collection, alerting, and interactive analytics dashboard.",
+    "name": "Detection of Alzheimer's Disease using Machine Learning",
+    "desc": "Enhanced Python-based ML pipelines to analyze MRI datasets and improve classification accuracy for Alzheimer's disease stages.",
     "image": "monitoring",
-    "category": "network",
+    "category": "software",
     "features": [
-      "Real-time SNMP data collection and processing",
-      "Interactive analytics dashboard with visualizations",
-      "Automated alerting system for network anomalies"
+      "Python-based ML pipelines for MRI dataset analysis",
+      "Data preprocessing, feature extraction, and model evaluation",
+      "Improved detection precision and reliability for Alzheimer's classification"
     ],
-    "tech": ["Python", "SNMP", "Database", "Dashboard"],
+    "tech": ["Python", "Machine Learning", "MRI Analysis", "Data Science"],
     "links": {
       "view": "#",
-      "code": "https://github.com/Poorna-Chandra-D/Network-Monitoring-System-SNMP"
+      "code": "https://github.com/Nisarga15"
     }
   },
   {
-    "name": "Pi-hole Network Ad-Blocking & Privacy Solution",
-    "desc": "Configured Pi-hole with Unbound DNS for network-wide ad/malware blocking. Set up Raspberry Pi OS, Achieved ~90% ad-blocking.",
+    "name": "Stock Verification Management System",
+    "desc": "Backend workflows to collect and process real-time inventory data, maintaining data accuracy using MySQL and SQL-based operations.",
     "image": "pihole",
-    "category": "network",
+    "category": "software",
     "features": [
-      "Network-wide ad and malware blocking (~90% effectiveness)",
-      "Unbound DNS configuration for privacy",
-      "Raspberry Pi OS setup and management"
+      "Backend workflows for real-time inventory data collection and processing",
+      "Data accuracy maintenance using MySQL and SQL-based operations",
+      "Improved inventory tracking and reporting through structured data modeling"
     ],
-    "tech": ["Pi-hole", "Raspberry Pi", "DNS", "Linux"],
-    "links": {
-      "view": "https://www.linkedin.com/posts/poorna-chandra-dinesh_pihole-raspberrypi-adblock-activity-7382221204763566080-2Uoq",
-      "code": "https://www.linkedin.com/posts/poorna-chandra-dinesh_pihole-raspberrypi-adblock-activity-7382221204763566080-2Uoq"
-    }
-  },
-  {
-    "name": "Aruba S2500-48P Switch Lab & Configuration",
-    "desc": "Hands-on lab with Aruba S2500-48P (48 PoE ports). Configured VLANs, trunk ports, PoE setups, Aruba CLI, role-based access, and QoS.",
-    "image": "aruba-switch",
-    "category": "network",
-    "features": [
-      "VLAN configuration and trunk port setup",
-      "PoE power management for 48 ports",
-      "QoS policies and role-based access control"
-    ],
-    "tech": ["Aruba CLI", "Network", "VLAN", "PoE"],
-    "links": {
-      "view": "https://www.linkedin.com/posts/poorna-chandra-dinesh_networking-networkengineer-aruba-activity-7369908244166733825-z4Kn",
-      "code": "https://www.linkedin.com/posts/poorna-chandra-dinesh_networking-networkengineer-aruba-activity-7369908244166733825-z4Kn"
-    }
-  },
-  {
-    "name": "Enterprise VoIP Migration & ATA Deployment",
-    "desc": "Migrated legacy PBX to Cisco VoIP using ATAs. Configured IP phones, optimized QoS for voice traffic, and maintained endpoint inventory.",
-    "image": "voip-infrastructure",
-    "category": "network",
-    "features": [
-      "Legacy PBX to Cisco VoIP migration",
-      "ATA (Analog Terminal Adapter) configuration and deployment",
-      "Voice traffic QoS optimization"
-    ],
-    "tech": ["Cisco", "VoIP", "Network", "QoS"],
+    "tech": ["MySQL", "SQL", "Backend", "Data Modeling"],
     "links": {
       "view": "#",
-      "code": "#"
-    }
-  },
-  {
-    "name": "Campus Network Modernization & WiFi Optimization",
-    "desc": "Upgraded campus access switches and fiber uplinks. Conducted WiFi surveys, optimized AP placement. Validated Cisco configurations.",
-    "image": "wifi-optimization",
-    "category": "network",
-    "features": [
-      "Campus access switch upgrades and fiber uplinks",
-      "WiFi site survey and AP placement optimization",
-      "Cisco configuration validation and testing"
-    ],
-    "tech": ["Cisco", "WiFi", "Network", "Fiber"],
-    "links": {
-      "view": "#",
-      "code": "#"
+      "code": "https://github.com/Nisarga15"
     }
   }
 ]

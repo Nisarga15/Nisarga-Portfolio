@@ -59,7 +59,7 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Poorna Chandra Dinesh";
+            document.title = "Portfolio | Nisarga Vishwamanjuswamy";
             $("#favicon").attr("href", "assets/images/favicon.png");
         }
         else {
@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["Network Engineer", "Software Engineer", "AI Tools Engineer", "Application Developer", "Network Software Engineer", "Site Reliability Engineer"],
+    strings: ["Software Development", "Data Analytics", "Cloud Infrastructure", "Backend Engineering", "CI/CD Pipelines", "API Development"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -92,7 +92,7 @@ async function fetchData(type = "skills") {
 function showSkills(skills) {
     let skillsContainer1 = document.getElementById("skillsContainer1");
     let skillsContainer2 = document.getElementById("skillsContainer2");
-    
+
     // Categorize skills
     const categories = {
         frontend: ['React', 'Next', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'TypeScript'],
@@ -102,7 +102,7 @@ function showSkills(skills) {
         language: ['JavaScript', 'Python', 'Java', 'TypeScript'],
         tools: ['Git', 'Postman', 'Docker', 'Jira', 'Figma']
     };
-    
+
     function getCategory(skillName) {
         for (let [category, keywords] of Object.entries(categories)) {
             if (keywords.some(keyword => skillName.toLowerCase().includes(keyword.toLowerCase()))) {
@@ -111,11 +111,11 @@ function showSkills(skills) {
         }
         return 'tools';
     }
-    
+
     // Split skills into two rows
     let row1Skills = "";
     let row2Skills = "";
-    
+
     skills.forEach((skill, index) => {
         const category = getCategory(skill.name);
         const badgeHTML = `
@@ -123,7 +123,7 @@ function showSkills(skills) {
             <img src="${skill.icon}" alt="${skill.name}" />
             <span>${skill.name}</span>
         </div>`;
-        
+
         // Alternate between rows
         if (index % 2 === 0) {
             row1Skills += badgeHTML;
@@ -131,7 +131,7 @@ function showSkills(skills) {
             row2Skills += badgeHTML;
         }
     });
-    
+
     // Duplicate skills for infinite scroll effect
     skillsContainer1.innerHTML = row1Skills + row1Skills;
     skillsContainer2.innerHTML = row2Skills + row2Skills;
@@ -208,12 +208,7 @@ function renderHomeProjects() {
 
         return `
         <div class="project-card">
-            <div class="project-image">
-                <img src="/assets/images/projects/${project.image}.png" alt="${project.name}" />
-                <div class="project-zoom">
-                    <i class="fas fa-search"></i>
-                </div>
-            </div>
+
             <div class="project-content">
                 <h3 class="project-title">${project.name}</h3>
                 <ul class="project-features">
@@ -352,12 +347,12 @@ function showProjects(projects) {
 }
 
 function showCertifications(certs) {
-        let certsContainer = document.querySelector("#certifications .box-container");
-        let certHTML = "";
-        certs.slice(0, 10).forEach(cert => {
-                certHTML += `
+    let certsContainer = document.querySelector("#certifications .box-container");
+    let certHTML = "";
+    certs.slice(0, 10).forEach(cert => {
+        certHTML += `
                 <div class="box tilt">
-            <img draggable="false" src="/assets/images/certifications/${cert.image}.png" alt="certification" />
+            <img draggable="false" src="/assets/images/certifications/${cert.image}" alt="certification" />
             <div class="content">
                 <div class="tag">
                 <h3>${cert.name}</h3>
@@ -373,20 +368,20 @@ function showCertifications(certs) {
                 </div>
             </div>
         </div>`
-        });
-        certsContainer.innerHTML = certHTML;
+    });
+    certsContainer.innerHTML = certHTML;
 
-        VanillaTilt.init(document.querySelectorAll("#certifications .tilt"), {
-                max: 15,
-        });
+    VanillaTilt.init(document.querySelectorAll("#certifications .tilt"), {
+        max: 15,
+    });
 
-        const srtop = ScrollReveal({
-                origin: 'top',
-                distance: '80px',
-                duration: 1000,
-                reset: true
-        });
-        srtop.reveal('#certifications .box', { interval: 200 });
+    const srtop = ScrollReveal({
+        origin: 'top',
+        distance: '80px',
+        duration: 1000,
+        reset: true
+    });
+    srtop.reveal('#certifications .box', { interval: 200 });
 }
 
 fetchData().then(data => {
@@ -454,10 +449,8 @@ srtop.reveal('.home .content .btn', { delay: 200 });
 srtop.reveal('.home .image', { delay: 400 });
 srtop.reveal('.home .linkedin', { interval: 600 });
 srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.home .twitter', { interval: 1000 });
 srtop.reveal('.home .telegram', { interval: 600 });
 srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
 
 /* SCROLL ABOUT */
 srtop.reveal('.about .content h3', { delay: 200 });
@@ -484,8 +477,7 @@ srtop.reveal('#certifications .box', { interval: 200 });
 srtop.reveal('.experience .timeline', { delay: 400 });
 srtop.reveal('.experience .timeline .container', { interval: 400 });
 
-/* SCROLL RECOMMENDATIONS */
-srtop.reveal('.recommendations .recommendation-box', { interval: 200 });
+
 
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
@@ -495,12 +487,12 @@ srtop.reveal('.contact .container .form-group', { delay: 400 });
 const profileContainer = document.querySelector('.profile-container');
 
 document.addEventListener('mousemove', (e) => {
-  const { clientX: mouseX, clientY: mouseY } = e;
-  const { innerWidth: width, innerHeight: height } = window;
+    const { clientX: mouseX, clientY: mouseY } = e;
+    const { innerWidth: width, innerHeight: height } = window;
 
-  const xRotation = ((mouseY / height) - 0.5) * 30; // Rotate up to 30 degrees vertically
-  const yRotation = ((mouseX / width) - 0.5) * -30; // Rotate up to 30 degrees horizontally
+    const xRotation = ((mouseY / height) - 0.5) * 30; // Rotate up to 30 degrees vertically
+    const yRotation = ((mouseX / width) - 0.5) * -30; // Rotate up to 30 degrees horizontally
 
-  profileContainer.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+    profileContainer.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
 });
 

@@ -1,5 +1,5 @@
 // GitHub Activity Feed (Public)
-const GITHUB_USERNAME = 'Poorna-Chandra-D';
+const GITHUB_USERNAME = 'Nisarga15';
 const GITHUB_API_BASE = 'https://api.github.com';
 const CACHE_TTL = 10 * 60 * 1000;
 

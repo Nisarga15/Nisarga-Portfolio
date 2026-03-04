@@ -4,7 +4,7 @@ function renderCertifications(certs) {
   certs.forEach(cert => {
     html += `
     <div class="box tilt">
-      <img draggable="false" src="/assets/images/certifications/${cert.image}.png" alt="certification" />
+      <img draggable="false" src="/assets/images/certifications/${cert.image}" alt="certification" />
       <div class="content">
         <div class="tag">
           <h3>${cert.name}</h3>

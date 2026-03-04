@@ -1,37 +1,42 @@
 [
   {
-    "name": "Cisco Certified Network Associate Routing and Switching (CCNA)",
-    "issuer": "Cisco",
-    "issued": "Sep 2025",
-    "expires": "Sep 2028",
-    "credentialId":"0bacfc70-51c8-4d25-aaa1-112da0fc7cfa",
-    "image": "ccna",
-    "desc": " TCP/IP, DNS, DHCP · Layer 2/3 Networking Concepts",
-    "links": {
-      "credential": "https://www.credly.com/badges/0bacfc70-51c8-4d25-aaa1-112da0fc7cfa/public_url"
-    }
-  },
-  {
-    "name": "Microsoft Certified: Power Automate RPA Developer Associate",
+    "name": "Microsoft Certified: Azure Fundamentals (AZ-900)",
     "issuer": "Microsoft",
-    "issued": "Jul 2024",
-    "expires": "Jul 2025",
-    "credentialId": "994899703",
-    "image": "power-automate-rpa",
-    "desc": "Robotic Process Automation (RPA)",
+    "issued": "2024",
+    "image": "Az_fun.jpeg",
+    "desc": "Cloud concepts, Azure services, security, privacy, compliance, and trust",
     "links": {
-      "credential": "https://learn.microsoft.com/en-gb/users/55977522/credentials/6e3d241bb3c553b0?ref=https%3A%2F%2Fwww.linkedin.com%2F"
+      "credential": "https://learn.microsoft.com/en-us/certifications/azure-fundamentals/"
     }
   },
   {
-    "name": "Advance RPA Training",
-    "issuer": "Netalla Innovations Pvt. Ltd.",
-    "issued": "Sep 2020",
-    "credentialId": "AEUMMT4K",
-    "image": "netalla-rpa",
-    "desc": "Advance RPA Training credential",
+    "name": "Microsoft Certified: Azure Developer Associate (AZ-204)",
+    "issuer": "Microsoft",
+    "issued": "2024",
+    "image": "Az_ass.jpeg",
+    "desc": "Developing solutions for Microsoft Azure including compute, storage, security, and monitoring",
     "links": {
-      "credential": "https://learn.netalla.com/share-certificate?serialno=AEUMMT4K"
+      "credential": "https://learn.microsoft.com/en-us/certifications/azure-developer/"
+    }
+  },
+  {
+    "name": "Internshala Python Certification",
+    "issuer": "Internshala",
+    "issued": "2021",
+    "image": "python.jpg",
+    "desc": "Python programming fundamentals and application development",
+    "links": {
+      "credential": "https://internshala.com/"
+    }
+  },
+  {
+    "name": "Publication: Detection Of Alzheimer's Disease from MRI Scan using Machine Learning",
+    "issuer": "IJRASET (Paper Id: IJRASET45831)",
+    "issued": "2022",
+    "image": "research.jpeg",
+    "desc": "An Implementation Paper on ML-based MRI analysis for Alzheimer's disease detection",
+    "links": {
+      "credential": "https://www.ijraset.com/"
     }
   }
 ]

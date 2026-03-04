@@ -15,11 +15,11 @@ const PRO_LEVELS = [
   { min: 0, label: 'Beginner' }
 ];
 
-// Network-related keywords for highlighting
+// Cloud & Backend keywords for highlighting
 const NETWORK_KEYWORDS = [
-  'ccna', 'cisco', 'network', 'voip', 'vlan', 'wifi', 'security', 
-  'routing', 'switching', 'infrastructure', 'dns', 'dhcp', 'tcp/ip',
-  'firewall', 'vpn', 'wireless', 'ethernet', 'fiber'
+  'aws', 'azure', 'gcp', 'cloud', 'docker', 'terraform', 'lambda',
+  'ec2', 'iam', 'vpc', 'cloudformation', 'deployment', 'hosting',
+  'linux', 'kubernetes', 'ci/cd'
 ];
 
 // Software engineering keywords for highlighting
@@ -70,7 +70,7 @@ class SkillBubble {
     this.projects = projects;
     this.level = getLevel(projects.length);
     this.hovered = false;
-    
+
     const highlight = isHighlightedSkill(skill.name);
     this.isNetwork = highlight.isNetwork;
     this.isSoftware = highlight.isSoftware;
@@ -81,19 +81,19 @@ class SkillBubble {
     // Floating animation
     this.floatOffset += BUBBLE_CONFIG.floatSpeed * 0.02;
     const floatY = Math.sin(this.floatOffset) * 15;
-    
+
     // Physics
     this.vy += BUBBLE_CONFIG.gravity;
     this.x += this.vx;
     this.y += this.vy;
-    
+
     // Apply floating
     this.y += (this.targetY + floatY - this.y) * 0.02;
-    
+
     // Friction
     this.vx *= BUBBLE_CONFIG.friction;
     this.vy *= BUBBLE_CONFIG.friction;
-    
+
     // Bounce off walls
     if (this.x - this.radius < 0) {
       this.x = this.radius;
@@ -102,7 +102,7 @@ class SkillBubble {
       this.x = canvasWidth - this.radius;
       this.vx *= -BUBBLE_CONFIG.bounce;
     }
-    
+
     if (this.y - this.radius < 0) {
       this.y = this.radius;
       this.vy *= -BUBBLE_CONFIG.bounce;
@@ -110,7 +110,7 @@ class SkillBubble {
       this.y = canvasHeight - this.radius;
       this.vy *= -BUBBLE_CONFIG.bounce;
     }
-    
+
     // Check hover
     const dx = mouseX - this.x;
     const dy = mouseY - this.y;
@@ -121,13 +121,13 @@ class SkillBubble {
   draw(ctx) {
     const scale = this.hovered ? BUBBLE_CONFIG.hoverScale : 1;
     const r = this.radius * scale;
-    
+
     // Glow effect for highlighted skills
     if (this.isHighlighted) {
       ctx.save();
       ctx.shadowBlur = 20;
       ctx.shadowColor = this.isNetwork ? 'rgba(255, 122, 24, 0.6)' : 'rgba(255, 45, 128, 0.6)';
-      
+
       // Outer glow ring
       const gradient = ctx.createRadialGradient(this.x, this.y, r * 0.5, this.x, this.y, r * 1.2);
       gradient.addColorStop(0, this.isNetwork ? 'rgba(255, 122, 24, 0.3)' : 'rgba(255, 45, 128, 0.3)');
@@ -138,17 +138,17 @@ class SkillBubble {
       ctx.fill();
       ctx.restore();
     }
-    
+
     // Main bubble
     const bubbleGradient = ctx.createRadialGradient(
-      this.x - r * 0.3, 
-      this.y - r * 0.3, 
+      this.x - r * 0.3,
+      this.y - r * 0.3,
       0,
-      this.x, 
-      this.y, 
+      this.x,
+      this.y,
       r
     );
-    
+
     if (this.isNetwork) {
       bubbleGradient.addColorStop(0, 'rgba(255, 122, 24, 0.9)');
       bubbleGradient.addColorStop(1, 'rgba(255, 90, 24, 0.7)');
@@ -159,19 +159,19 @@ class SkillBubble {
       bubbleGradient.addColorStop(0, 'rgba(154, 163, 184, 0.7)');
       bubbleGradient.addColorStop(1, 'rgba(120, 130, 150, 0.5)');
     }
-    
+
     ctx.fillStyle = bubbleGradient;
     ctx.beginPath();
     ctx.arc(this.x, this.y, r, 0, Math.PI * 2);
     ctx.fill();
-    
+
     // Border
-    ctx.strokeStyle = this.isHighlighted 
+    ctx.strokeStyle = this.isHighlighted
       ? (this.isNetwork ? 'rgba(255, 122, 24, 0.9)' : 'rgba(255, 45, 128, 0.9)')
       : 'rgba(255, 255, 255, 0.2)';
     ctx.lineWidth = this.isHighlighted ? 3 : 2;
     ctx.stroke();
-    
+
     // Shine effect
     const shineGradient = ctx.createRadialGradient(
       this.x - r * 0.4,
@@ -187,7 +187,7 @@ class SkillBubble {
     ctx.beginPath();
     ctx.arc(this.x, this.y, r, 0, Math.PI * 2);
     ctx.fill();
-    
+
     // Skill name (centered)
     ctx.fillStyle = '#fff';
     ctx.font = `bold ${Math.max(10, r * 0.25)}px 'Poppins', sans-serif`;
@@ -195,18 +195,18 @@ class SkillBubble {
     ctx.textBaseline = 'middle';
     ctx.shadowBlur = 4;
     ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-    
+
     const words = this.skill.name.split(' ');
     if (words.length > 2 && r < 50) {
       // Multiline for small bubbles
       const lineHeight = r * 0.3;
       words.forEach((word, i) => {
-        ctx.fillText(word, this.x, this.y + (i - words.length/2 + 0.5) * lineHeight);
+        ctx.fillText(word, this.x, this.y + (i - words.length / 2 + 0.5) * lineHeight);
       });
     } else {
       ctx.fillText(this.skill.name, this.x, this.y);
     }
-    
+
     ctx.shadowBlur = 0;
   }
 }
@@ -218,13 +218,13 @@ async function initSkillsGlobe() {
   if (!container || !canvas || !tooltip) return;
 
   const ctx = canvas.getContext('2d');
-  
+
   function resizeCanvas() {
     const rect = canvas.getBoundingClientRect();
     canvas.width = rect.width;
     canvas.height = rect.height;
   }
-  
+
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
 
@@ -244,37 +244,37 @@ async function initSkillsGlobe() {
 
   const projects = projectsData || [];
   const bubbles = [];
-  
+
   // Create bubbles with grid-based distribution for better coverage
   const cols = Math.ceil(Math.sqrt(skillsData.length * (canvas.width / canvas.height)));
   const rows = Math.ceil(skillsData.length / cols);
   const cellWidth = canvas.width / cols;
   const cellHeight = canvas.height / rows;
-  
+
   skillsData.forEach((skill, i) => {
     const relatedProjects = matchProjects(skill.name, projects);
     const level = getLevel(relatedProjects.length);
-    
+
     // Size based on proficiency
     let radius;
     if (level === 'Expert') radius = BUBBLE_CONFIG.maxRadius;
     else if (level === 'Advanced') radius = BUBBLE_CONFIG.maxRadius * 0.75;
     else if (level === 'Intermediate') radius = BUBBLE_CONFIG.maxRadius * 0.55;
     else radius = BUBBLE_CONFIG.minRadius;
-    
+
     // Grid-based position with randomness
     const col = i % cols;
     const row = Math.floor(i / cols);
     const centerX = col * cellWidth + cellWidth / 2;
     const centerY = row * cellHeight + cellHeight / 2;
-    
+
     // Add randomness within cell (50% of cell size)
     const offsetX = (Math.random() - 0.5) * cellWidth * 0.5;
     const offsetY = (Math.random() - 0.5) * cellHeight * 0.5;
-    
+
     const x = Math.max(radius + 10, Math.min(canvas.width - radius - 10, centerX + offsetX));
     const y = Math.max(radius + 10, Math.min(canvas.height - radius - 10, centerY + offsetY));
-    
+
     bubbles.push(new SkillBubble(skill, x, y, radius, relatedProjects));
   });
 
@@ -297,23 +297,23 @@ async function initSkillsGlobe() {
       for (let j = i + 1; j < bubbles.length; j++) {
         const b1 = bubbles[i];
         const b2 = bubbles[j];
-        
+
         const dx = b2.x - b1.x;
         const dy = b2.y - b1.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const minDistance = b1.radius + b2.radius;
-        
+
         if (distance < minDistance) {
           const angle = Math.atan2(dy, dx);
           const overlap = minDistance - distance;
           const moveX = Math.cos(angle) * overlap * 0.5;
           const moveY = Math.sin(angle) * overlap * 0.5;
-          
+
           b1.x -= moveX;
           b1.y -= moveY;
           b2.x += moveX;
           b2.y += moveY;
-          
+
           // Exchange velocities for bounce effect (gentler)
           const tempVx = b1.vx;
           const tempVy = b1.vy;
@@ -328,15 +328,15 @@ async function initSkillsGlobe() {
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     // Update and draw bubbles
     bubbles.forEach(bubble => {
       bubble.update(canvas.width, canvas.height, mouseX, mouseY);
     });
-    
+
     // Resolve collisions
     resolveCollisions();
-    
+
     // Draw bubbles (back to front)
     bubbles.forEach(bubble => {
       bubble.draw(ctx);
@@ -345,19 +345,19 @@ async function initSkillsGlobe() {
     // Update tooltip
     const hoveredBubble = bubbles.find(b => b.hovered);
     if (hoveredBubble) {
-      const category = hoveredBubble.isNetwork ? 'Network Engineering' : 
-                      hoveredBubble.isSoftware ? 'Software Engineering' : 'General';
-      const categoryColor = hoveredBubble.isNetwork ? '#ff7a18' : 
-                           hoveredBubble.isSoftware ? '#ff2d80' : '#9aa3b8';
-      
+      const category = hoveredBubble.isNetwork ? 'Network Engineering' :
+        hoveredBubble.isSoftware ? 'Software Engineering' : 'General';
+      const categoryColor = hoveredBubble.isNetwork ? '#ff7a18' :
+        hoveredBubble.isSoftware ? '#ff2d80' : '#9aa3b8';
+
       tooltip.innerHTML = `
         <div style="font-weight: bold; font-size: 14px; margin-bottom: 6px;">${hoveredBubble.skill.name}</div>
         <div style="color: ${categoryColor}; font-size: 12px; margin-bottom: 4px; font-weight: 600;">${category}</div>
         <div style="color: #ff7a18; font-size: 12px; margin-bottom: 4px;">Proficiency: ${hoveredBubble.level}</div>
-        ${hoveredBubble.projects.length > 0 ? 
+        ${hoveredBubble.projects.length > 0 ?
           `<div style="font-size: 11px; color: #888; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; margin-top: 6px;">
             <strong>Related Projects:</strong><br/>${hoveredBubble.projects.map(p => p.name).join(', ')}
-          </div>` : 
+          </div>` :
           ''}
       `;
       tooltip.style.left = `${hoveredBubble.x}px`;
