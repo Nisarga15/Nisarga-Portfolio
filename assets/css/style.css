@@ -1290,7 +1290,7 @@ header .navbar ul li a:hover::after {
 .skill-badge span {
   font-size: 1.6rem;
   font-weight: 700;
-  color: white;
+  color: #111827;
 }
 
 /* Color variants for different tech categories */
