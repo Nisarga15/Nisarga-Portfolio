@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #ff7a18, #ff2d80);
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
   overflow: hidden;
   perspective: 1000px;
 }

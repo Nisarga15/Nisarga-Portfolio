@@ -64,7 +64,7 @@ header .logo i {
   font-size: 2.2rem;
 }
 header .logo:hover {
-  color: #fc8c05;
+  color: #2563eb;
 }
 header .navbar ul{
   list-style: none;
@@ -240,7 +240,7 @@ header .navbar ul li a:hover{
 }
 .footer .box-container .box p i{
   padding-right: 1rem;
-  color: #ffae00;
+  color: #2563eb;
 }
 .footer .box-container .box a{
   font-size: 1.5rem;
@@ -249,7 +249,7 @@ header .navbar ul li a:hover{
   display: block;
 }
 .footer .box-container .box a:hover{
-  color: #ffae00;
+  color: #2563eb;
 }
 .footer .box-container .box .share{
   display: flex;
@@ -273,7 +273,7 @@ header .navbar ul li a:hover{
   background: transparent;
   transform: scale(0.98);
   border: .1rem solid rgb(180, 178, 178);
-  color: #ffae00;
+  color: #2563eb;
 }
 .footer .credit{
   padding: 1rem 0 0 0;
@@ -285,7 +285,7 @@ header .navbar ul li a:hover{
   border-top: .1rem solid #fff3;
 }
 .footer .credit a{
-  color: #ffae00;
+  color: #2563eb;
 }
 .footer .fa{
     color: #E90606;
@@ -338,7 +338,7 @@ header .navbar ul li a:hover{
   right: 2rem;
   padding: 1rem 1.5rem;
   font-size: 2rem;
-  background: #ffae00;
+  background: #2563eb;
   color: rgb(13, 0, 44);
   border-radius: 5rem;
   transition: 1s linear;

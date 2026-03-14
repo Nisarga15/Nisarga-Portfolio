@@ -126,11 +126,11 @@ class SkillBubble {
     if (this.isHighlighted) {
       ctx.save();
       ctx.shadowBlur = 20;
-      ctx.shadowColor = this.isNetwork ? 'rgba(255, 122, 24, 0.6)' : 'rgba(255, 45, 128, 0.6)';
+      ctx.shadowColor = this.isNetwork ? 'rgba(37, 99, 235, 0.5)' : 'rgba(124, 58, 237, 0.5)';
 
       // Outer glow ring
       const gradient = ctx.createRadialGradient(this.x, this.y, r * 0.5, this.x, this.y, r * 1.2);
-      gradient.addColorStop(0, this.isNetwork ? 'rgba(255, 122, 24, 0.3)' : 'rgba(255, 45, 128, 0.3)');
+      gradient.addColorStop(0, this.isNetwork ? 'rgba(37, 99, 235, 0.2)' : 'rgba(124, 58, 237, 0.2)');
       gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = gradient;
       ctx.beginPath();
@@ -150,10 +150,10 @@ class SkillBubble {
     );
 
     if (this.isNetwork) {
-      bubbleGradient.addColorStop(0, 'rgba(255, 122, 24, 0.9)');
+      bubbleGradient.addColorStop(0, 'rgba(37, 99, 235, 0.85)');
       bubbleGradient.addColorStop(1, 'rgba(255, 90, 24, 0.7)');
     } else if (this.isSoftware) {
-      bubbleGradient.addColorStop(0, 'rgba(255, 45, 128, 0.9)');
+      bubbleGradient.addColorStop(0, 'rgba(124, 58, 237, 0.85)');
       bubbleGradient.addColorStop(1, 'rgba(230, 30, 110, 0.7)');
     } else {
       bubbleGradient.addColorStop(0, 'rgba(154, 163, 184, 0.7)');
@@ -167,7 +167,7 @@ class SkillBubble {
 
     // Border
     ctx.strokeStyle = this.isHighlighted
-      ? (this.isNetwork ? 'rgba(255, 122, 24, 0.9)' : 'rgba(255, 45, 128, 0.9)')
+      ? (this.isNetwork ? 'rgba(37, 99, 235, 0.85)' : 'rgba(124, 58, 237, 0.85)')
       : 'rgba(255, 255, 255, 0.2)';
     ctx.lineWidth = this.isHighlighted ? 3 : 2;
     ctx.stroke();
@@ -347,13 +347,13 @@ async function initSkillsGlobe() {
     if (hoveredBubble) {
       const category = hoveredBubble.isNetwork ? 'Network Engineering' :
         hoveredBubble.isSoftware ? 'Software Engineering' : 'General';
-      const categoryColor = hoveredBubble.isNetwork ? '#ff7a18' :
-        hoveredBubble.isSoftware ? '#ff2d80' : '#9aa3b8';
+      const categoryColor = hoveredBubble.isNetwork ? '#2563eb' :
+        hoveredBubble.isSoftware ? '#7c3aed' : '#94a3b8';
 
       tooltip.innerHTML = `
         <div style="font-weight: bold; font-size: 14px; margin-bottom: 6px;">${hoveredBubble.skill.name}</div>
         <div style="color: ${categoryColor}; font-size: 12px; margin-bottom: 4px; font-weight: 600;">${category}</div>
-        <div style="color: #ff7a18; font-size: 12px; margin-bottom: 4px;">Proficiency: ${hoveredBubble.level}</div>
+        <div style="color: #2563eb; font-size: 12px; margin-bottom: 4px;">Proficiency: ${hoveredBubble.level}</div>
         ${hoveredBubble.projects.length > 0 ?
           `<div style="font-size: 11px; color: #888; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; margin-top: 6px;">
             <strong>Related Projects:</strong><br/>${hoveredBubble.projects.map(p => p.name).join(', ')}

@@ -12,7 +12,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff7a18 0%, #ff2d80 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   border: none;
   color: white;
   font-size: 24px;
@@ -49,12 +49,12 @@
   top: -2px;
   right: -2px;
   background: #00ff88;
-  color: #050915;
+  color: #111827;
   font-size: 10px;
   font-weight: 700;
   padding: 2px 6px;
   border-radius: 12px;
-  border: 2px solid #050915;
+  border: 2px solid #e5e7eb;
 }
 
 /* Chat Window */
@@ -105,7 +105,7 @@
 
 .chat-header-info i {
   font-size: 24px;
-  color: #ff7a18;
+  color: #2563eb;
 }
 
 .chat-header h3 {
@@ -150,7 +150,7 @@
 }
 
 .chat-close-btn:hover {
-  color: #ff2d80;
+  color: #7c3aed;
   background: rgba(255, 45, 128, 0.1);
 }
 
@@ -212,7 +212,7 @@
 }
 
 .bot-message .message-avatar {
-  background: linear-gradient(135deg, #ff7a18, #ff2d80);
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
 }
 
@@ -242,7 +242,7 @@
 }
 
 .user-message .message-content {
-  background: linear-gradient(135deg, #ff7a18, #ff2d80);
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
   border: none;
 }
@@ -257,7 +257,7 @@
 .typing-dot {
   width: 8px;
   height: 8px;
-  background: #ff7a18;
+  background: #2563eb;
   border-radius: 50%;
   animation: typing 1.4s ease-in-out infinite;
 }
@@ -293,7 +293,7 @@
 .suggestion-btn {
   background: rgba(255, 122, 24, 0.1);
   border: 1px solid rgba(255, 122, 24, 0.3);
-  color: #ff7a18;
+  color: #2563eb;
   padding: 0.6rem 1.2rem;
   border-radius: 20px;
   font-size: 1.2rem;
@@ -315,7 +315,7 @@
   gap: 0.8rem;
   margin-top: 1.5rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #ff7a18, #ff2d80);
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
   border: none;
   border-radius: 12px;
@@ -349,11 +349,11 @@
 }
 
 .schedule-buttons a.primary {
-  background: linear-gradient(135deg, #ff7a18, #ff2d80);
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
 }
 
 .schedule-buttons a.primary:hover {
-  background: linear-gradient(135deg, #ff2d80, #ff7a18);
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
 }
 
 .schedule-buttons a.secondary {
@@ -401,7 +401,7 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #ff7a18, #ff2d80);
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
   border: none;
   color: white;
   font-size: 18px;
