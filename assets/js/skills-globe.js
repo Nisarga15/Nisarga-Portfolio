@@ -345,8 +345,8 @@ async function initSkillsGlobe() {
     // Update tooltip
     const hoveredBubble = bubbles.find(b => b.hovered);
     if (hoveredBubble) {
-      const category = hoveredBubble.isNetwork ? 'Network Engineering' :
-        hoveredBubble.isSoftware ? 'Software Engineering' : 'General';
+      const category = hoveredBubble.isNetwork ? 'Data/Cloud Engineering' :
+        hoveredBubble.isSoftware ? 'SWE & AI Engineering' : 'General';
       const categoryColor = hoveredBubble.isNetwork ? '#2563eb' :
         hoveredBubble.isSoftware ? '#7c3aed' : '#94a3b8';
 
