@@ -1946,7 +1946,7 @@ header .navbar ul li a:hover::after {
   border-radius: 999px;
   background: rgba(255, 122, 24, 0.15);
   border: 1px solid rgba(255, 122, 24, 0.3);
-  color: #93c5fd;
+  color: #2563eb;
   font-size: 1.2rem;
   font-weight: 600;
 }
